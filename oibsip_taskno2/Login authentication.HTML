@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <!-- Using Tailwind CSS and Font Awesome via CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center min-h-screen">
+    <div id="auth-container" class="bg-white p-10 rounded-lg shadow-lg w-96 fade-in">
+        <h2 id="form-title" class="text-center text-3xl font-bold mb-8 text-gray-700">Register</h2>
+        <form id="auth-form">
+            <div class="mb-6">
+                <input type="text" id="username" placeholder="Username" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
+            </div>
+            <div class="mb-6">
+                <input type="password" id="password" placeholder="Password" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
+            </div>
+            <button type="button" id="auth-button" class="w-full bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition duration-300">Register</button>
+        </form>
+        <p id="toggle-auth" class="text-center text-green-500 mt-6 cursor-pointer">Already have an account? Login</p>
+    </div>
+
+    <div id="secured-page" class="hidden bg-white p-10 rounded-lg shadow-lg w-96 fade-in">
+        <h2 class="text-center text-3xl font-bold mb-8 text-gray-700">Secured Page</h2>
+        <p class="text-center mb-8 text-gray-600">Welcome, <span id="user-name" class="font-bold text-gray-800"></span>!</p>
+        <button id="logout-button" class="w-full bg-red-500 text-white p-4 rounded-lg hover:bg-red-600 transition duration-300">Logout</button>
+    </div>
+
+    <script>
+        const authContainer = document.getElementById('auth-container');
+        const securedPage = document.getElementById('secured-page');
+        const formTitle = document.getElementById('form-title');
+        const authButton = document.getElementById('auth-button');
+        const toggleAuth = document.getElementById('toggle-auth');
+        const userNameDisplay = document.getElementById('user-name');
+        const logoutButton = document.getElementById('logout-button');
+
+        let isLogin = false;
+        let users = {};
+
+        toggleAuth.addEventListener('click', () => {
+            isLogin = !isLogin;
+            formTitle.textContent = isLogin ? 'Login' : 'Register';
+            authButton.textContent = isLogin ? 'Login' : 'Register';
+            toggleAuth.textContent = isLogin ? 'Don\'t have an account? Register' : 'Already have an account? Login';
+        });
+
+        authButton.addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (isLogin) {
+                if (users[username] && users[username] === password) {
+                    alert('Login successful!');
+                    userNameDisplay.textContent = username;
+                    authContainer.classList.add('hidden');
+                    securedPage.classList.remove('hidden');
+                } else {
+                    alert('Invalid username or password');
+                }
+            } else {
+                if (users[username]) {
+                    alert('Username already exists');
+                } else {
+                    users[username] = password;
+                    alert('Registration successful! Please login.');
+                    isLogin = true;
+                    formTitle.textContent = 'Login';
+                    authButton.textContent = 'Login';
+                    toggleAuth.textContent = 'Don\'t have an account? Register';
+                }
+            }
+        });
+
+        logoutButton.addEventListener('click', () => {
+            authContainer.classList.remove('hidden');
+            securedPage.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
