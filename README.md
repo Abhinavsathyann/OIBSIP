@@ -30,3 +30,10 @@ A simple web application that converts temperatures between Celsius, Fahrenheit,
   - Easy-to-use interface
   - Real-time temperature conversion
   - Responsive design
+
+ Online Resources
+React Documentation - Official documentation for React.
+Tailwind CSS Documentation - Comprehensive guide on using Tailwind CSS.
+Razorpay Documentation - Official guide for integrating Razorpay payment gateway.
+JavaScript Temperature Conversion - Basic JavaScript tutorials for number conversions.
+MDN Web Docs - General web development resources and documentation.
