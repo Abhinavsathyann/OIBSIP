@@ -37,3 +37,11 @@ Tailwind CSS Documentation - Comprehensive guide on using Tailwind CSS.
 Razorpay Documentation - Official guide for integrating Razorpay payment gateway.
 JavaScript Temperature Conversion - Basic JavaScript tutorials for number conversions.
 MDN Web Docs - General web development resources and documentation.
+## Online Resources link
+
+- [React Documentation](https://reactjs.org/docs/getting-started.html) - Official documentation for React.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Comprehensive guide on using Tailwind CSS.
+- [Razorpay Documentation](https://razorpay.com/docs/) - Official guide for integrating Razorpay payment gateway.
+- [JavaScript Temperature Conversion](https://www.w3schools.com/js/js_numbers.asp) - Basic JavaScript tutorials for number conversions.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/) - General web development resources and documentation.
+
