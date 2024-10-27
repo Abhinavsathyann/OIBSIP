@@ -31,12 +31,6 @@ A simple web application that converts temperatures between Celsius, Fahrenheit,
   - Real-time temperature conversion
   - Responsive design
 
- Online Resources
-React Documentation - Official documentation for React.
-Tailwind CSS Documentation - Comprehensive guide on using Tailwind CSS.
-Razorpay Documentation - Official guide for integrating Razorpay payment gateway.
-JavaScript Temperature Conversion - Basic JavaScript tutorials for number conversions.
-MDN Web Docs - General web development resources and documentation.
 ## Online Resources link
 
 - [React Documentation](https://reactjs.org/docs/getting-started.html) - Official documentation for React.
